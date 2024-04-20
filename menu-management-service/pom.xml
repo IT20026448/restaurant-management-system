@@ -5,7 +5,7 @@
     <properties>
         <sonar.organization>it20026448</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-    </properties> 
+    </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
