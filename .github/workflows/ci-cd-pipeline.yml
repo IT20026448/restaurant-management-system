@@ -23,7 +23,7 @@ jobs:
           distribution: "temurin"
           cache: maven
       - name: Change to the project directory
-        run: cd ./menu-management-service
+        run: cd menu-management-service
       - name: Build with Maven
         run: mvn clean install -DskipTests
         working-directory: ./menu-management-service
