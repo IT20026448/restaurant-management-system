@@ -30,9 +30,9 @@ jobs:
       - name: Login to DockerHub
         run: docker login -u ${{secrets.DOCKERHUB_USERNAME}} -p ${{secrets.DOCKERHUB_PASSWORD}}
       - name: Build docker image
-        run : docker build -t it20026448/restaurant-management-system/menu-management-service .
+        run : docker build -t restaurant-management-system/menu-management-service .
       - name: Publish image to dockerhub
-        run: docker push it20026448/restaurant-management-system:latest
+        run: docker push restaurant-management-system/menu-management-service:latest
 
   deploy:
     name: Deploy
@@ -41,8 +41,8 @@ jobs:
 
     steps:
       - name: Pull image from dockerhub
-        run: docker pull it20026448/restaurant-management-system:latest
+        run: docker pull restaurant-management-system/menu-management-service:latest
       - name: Delete old container
         run: docker rm -f menu-management-container
       - name: Run docker container
-        run: docker run -d -p 8050:8050 --name menu-management-container it20026448/restaurant-management-system:latest
+        run: docker run -d -p 8050:8050 --name menu-management-container restaurant-management-system/menu-management-service:latest
