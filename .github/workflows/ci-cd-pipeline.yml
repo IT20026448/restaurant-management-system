@@ -30,7 +30,7 @@ jobs:
       - name: Login to DockerHub
         run: docker login -u ${{secrets.DOCKERHUB_USERNAME}} -p ${{secrets.DOCKERHUB_PASSWORD}}
       - name: Build docker image
-        run : docker build -t IT20026448/restaurant-management-system .
+        run : docker build -t it20026448/restaurant-management-system/menu-management-service .
       - name: Publish image to dockerhub
         run: docker push it20026448/restaurant-management-system:latest
 
